@@ -6,8 +6,10 @@ class Sidebar extends Component {
     }
     render() {
         return (
-            <nav className="nav" >
-                made by bafox2
+            <nav className="sidebar" >
+                <img src="" alt='help' />
+                <img src="" alt='calendar' />
+                <img src="" alt='export' />
             </nav>
         )
 

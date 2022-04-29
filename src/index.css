@@ -1,13 +1,62 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App {
+  height: 100vh;
+  display: grid; 
+  grid-template-columns: 0.5fr 5.5fr; 
+  grid-template-rows: .5fr 5.5fr 0.25fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "header header"
+    "sidenav main"
+    "footer footer"; 
 }
+
+header {
+  display: flex;
+  grid-area: header;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+}
+
+.timeDiv{
+  margin-left: auto;
+}
+
+.logo {
+  height: 100%;
+}
+nav { 
+  grid-area: sidenav; 
+  display: flex;
+  flex-direction: column;
+}
+footer { 
+  grid-area: footer; 
+  display: flex;
+  justify-content: center;
+}
+main { 
+  grid-area: main; 
+}
+
+.content{
+  display: grid; 
+  grid-template-columns: 0.5fr 1.5fr; 
+  grid-template-rows: 1fr 3fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "projectnav projectnav"
+    "dates categories"; 
+  grid-area: main; 
+}
+.projectNav { 
+  grid-area: projectnav; 
+  display: flex;
+}
+.dateNav { grid-area: dates; }
+.categoryNav { grid-area: categories; }

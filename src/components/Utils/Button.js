@@ -1,22 +1,15 @@
 import React, { Component } from 'react';
-
+//text, onClick
 class Button extends Component {
-    constructor() {
-        super();
-
-        this.state = {
-            count: 0,
-        };
-
-        this.countUp = this.countUp.bind(this);
+    constructor(props) {
+        super(props);
+        // this.buttonFunction = this.{ this.props.buttonFunction }.bind(this);      //this goes on the next thing
     }
 
 
     render() {
         return (
-
-            <button onClick={this.countUp}>Click Me!</button>
-
+            <button onClick={this.props.buttonFunction}>{this.props.text}</button>
         );
     }
 }

@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import Projectnav from "./Projectnav";
+import Datenav from "./Datenav";
+import Categorynav from "./Categorynav";
 
 class Main extends Component {
     constructor(props) {
@@ -6,8 +9,10 @@ class Main extends Component {
     }
     render() {
         return (
-            <main className="main" >
-                made by bafox2
+            <main className="content" >
+                <Projectnav />
+                <Datenav />
+                <Categorynav />
             </main>
         )
 
