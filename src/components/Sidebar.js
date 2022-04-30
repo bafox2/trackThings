@@ -1,18 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 
-class Sidebar extends Component {
-    constructor(props) {
-        super()
-    }
-    render() {
-        return (
-            <nav className="sidebar" >
-                <img src="" alt='help' />
-                <img src="" alt='calendar' />
-                <img src="" alt='export' />
-            </nav>
-        )
+function Sidebar(props) {
+    return (
+        <nav className="sidebar" >
+            <img src="" alt='help' />
+            <img src="" alt='calendar' />
+            <img src="" alt='export' />
+        </nav>
+    )
 
-    }
 }
+
 export default Sidebar
