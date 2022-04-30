@@ -43,7 +43,7 @@ footer {
 }
 main { 
   grid-area: main; 
-  background-color: rgb(245, 222, 179);
+  background-color: rgb(245, 222, 180);
 }
 
 .content{
