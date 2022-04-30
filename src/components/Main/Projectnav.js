@@ -4,15 +4,18 @@ import Button from '../Utils/Button'
 
 function Projectnav(props) {
     return (
-        <div className="projectNav" >
+        <div>
             <h2>Projects</h2>
-            <Button text='add project' buttonFunction='' />
-            <Projectcard />
-            <Projectcard />
-            <Projectcard />
+            <div className="projectNav" >
+                <Button text='add project' buttonFunction='' />
+                <Projectcard />
+                <Projectcard />
+                <Projectcard />
+            </div>
         </div>
     )
 
 }
 
 export default Projectnav
+//add project has the title and the reason

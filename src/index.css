@@ -1,6 +1,7 @@
 * {
   margin: 0;
   box-sizing: border-box;
+  color:  	rgb(112, 41, 99);
 }
 
 .App {
@@ -42,6 +43,7 @@ footer {
 }
 main { 
   grid-area: main; 
+  background-color: rgb(245, 222, 179);
 }
 
 .content{

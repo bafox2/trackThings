@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 //type, name, placeholder, onChange, value
 function Input(props) {
     return (
-        <button onClick={props.countUp}>Click Me!</button>
+        <input type={props.type} />
     );
 }
-}
+
 export default Input

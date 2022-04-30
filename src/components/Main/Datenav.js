@@ -1,12 +1,12 @@
 import React from "react";
 import Date from "./Date";
-import Button from '../Utils/Button'
+import Input from "../Utils/Input";
 
 function Datenav(props) {
     return (
         <div className="dateNav" >
-            <h2>Date List</h2>
-            <Button text='add date' buttonFunction='' />
+            <h2>Date Laist</h2>
+            <Input type='date' />
             <Date />
             <Date />
             <Date />
