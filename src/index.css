@@ -60,5 +60,7 @@ main {
   grid-area: projectnav; 
   display: flex;
 }
+.projectScroller{  display: flex;}
+.project {min-width: 190px;}
 .dateNav { grid-area: dates; }
 .categoryNav { grid-area: categories; }

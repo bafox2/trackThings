@@ -2,16 +2,23 @@ import React from "react";
 import Projectcard from "./Projectcard";
 import Button from '../Utils/Button'
 
+//might need to make a loop that does a project card for each project, 
+
 function Projectnav(props) {
     return (
-        <div>
+        <div className="projectNav">
             <h2>Projects</h2>
-            <div className="projectNav" >
-                <Button text='add project' buttonFunction='' />
+            <Button text='+' buttonFunction='' />
+            <div className="projectScroller" >
                 <Projectcard />
                 <Projectcard />
                 <Projectcard />
             </div>
+            <form>
+                <input placeholder="Project title" />
+                <input placeholder="Reason for tracking" />
+                <Button text="add project" />
+            </form>
         </div>
     )
 

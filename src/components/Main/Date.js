@@ -1,29 +1,19 @@
 import React from "react";
+import Button from "../Utils/Button";
 
 function Date(props) {
-    // Project name, times updated, last updated, image(?)
+
+
+
     return (
         <div className="date" >
-            <h2>date</h2>
+            <span>
+                <h2>{props.date || '02/02/2000'}</h2>
+                <Button text='x' />
+            </span>
         </div>
     )
-
-
 }
+
 export default Date
 
-// class Date extends Component {
-//     constructor(props) {
-//         super()
-//     }
-//     // Project name, times updated, last updated, image(?)
-//     render() {
-//         return (
-//             <div className="date" >
-//                 <h2>this.props.date</h2>
-//             </div>
-//         )
-
-//     }
-// }
-// export default Date
