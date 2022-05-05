@@ -2,6 +2,7 @@ import React from "react";
 import Button from "../Utils/Button";
 
 function Category(props) {
+    //do i need all these categories? or just the entry??
     const [categoryEntryData, setCategoryEntryData] = React.useState({
         title: "default cat",
         description: "default desc",
