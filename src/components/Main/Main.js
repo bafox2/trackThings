@@ -66,7 +66,7 @@ function Main(props) {
                 ...projects
             ]);
         //clear the inputs themselves
-        setState({
+        setNewProject({
             newProject.project = ''
             newProject.purpose = ''
         })
