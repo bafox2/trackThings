@@ -22,7 +22,6 @@ function Categorynav(props) {
     const handleSubmit = (event) => {
         event.preventDefault()
         // submitToApi(formData)
-        console.log(newCategory)
     }
 
     return (
@@ -60,8 +59,7 @@ function Categorynav(props) {
                     <option value="url">URL</option>
                     <option value="option">Options</option>
                 </select>
-
-                <Button text="add category" buttonFunction={handleSubmit} />
+                <Button text="add project" buttonFunction={props.onSubmit()} />
             </form>
             <Category />
             <Category />

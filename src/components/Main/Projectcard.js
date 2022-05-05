@@ -4,12 +4,12 @@ import Button from '../Utils/Button'
 function Projectcard(props) {
     // Project name, times updated, last updated, image(?)
     return (
-        <card className="project" >
+        <div className="project" >
             <h2>{props.title || 'proj title'}</h2>
             <h3>times updated: {props.timesUpdated || 0}</h3>
             <h3>last updated: {props.streak || 0}</h3>
             <Button text='x' />
-        </card>
+        </div>
     )
 
 }

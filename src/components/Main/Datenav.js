@@ -41,7 +41,6 @@ function Datenav(props) {
     const handleSubmit = (event) => {
         event.preventDefault()
     }
-
     return (
         <div className="dateNav" >
             <h2>Date List</h2>
@@ -52,11 +51,10 @@ function Datenav(props) {
                 onChange={handleChange}
                 name='date'
             />
-            <Button text='add date' buttonFunction={handleSubmit} />
+            <Button text="add project" buttonFunction={props.onSubmit()} />
             <Datea />
             <Datea />
             <Datea />
-            <Categorynav />
         </div>
     )
 }
