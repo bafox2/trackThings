@@ -39,6 +39,7 @@ function Main(props) {
         setProjects(
             [
                 {
+                    // HEEEEEEEEEELP HERE 5/5 6:42
                     title: newProject.value,
                     purpose: newProject.value,
                     picture: '',
@@ -66,6 +67,7 @@ function Main(props) {
                 ...projects
             ]);
         //clear the inputs themselves
+        //HEEEEEEEEEEEEEEEELP how would i clear the inputs of the cild after i update the projects list
         setNewProject({
             newProject.project = ''
             newProject.purpose = ''
@@ -96,7 +98,7 @@ function Main(props) {
     return (
         <main className="content" >
             <Projectnav onSubmit={() => onProjectAdd} />
-            <Datenav onSubmit={() => onDateAdd} />
+            <Datenav onSubmit={() => onDateAdd} dates={projects.entries} />
             <Categorynav onSubmit={() => onCategoryAdd} />
         </main>
     )
