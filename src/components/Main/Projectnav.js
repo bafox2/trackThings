@@ -1,6 +1,7 @@
 import React from "react";
 import Projectcard from "./Projectcard";
 import Button from '../Utils/Button'
+import Datenav from "./Datenav";
 
 //might need to make a loop that does a project card for each project, 
 
@@ -19,6 +20,8 @@ function Projectnav(props) {
                 <input placeholder="Reason for tracking" />
                 <Button text="add project" />
             </form>
+
+            <Datenav />
         </div>
     )
 

@@ -1,6 +1,7 @@
 import React from "react";
 import Datea from "./Date";
 import Button from "../Utils/Button";
+import Categorynav from './Categorynav'
 
 function Datenav(props) {
     const getCurrentYear = () => {
@@ -39,8 +40,6 @@ function Datenav(props) {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        // submitToApi(formData)
-        console.log(newDate)
     }
 
     return (
@@ -57,6 +56,7 @@ function Datenav(props) {
             <Datea />
             <Datea />
             <Datea />
+            <Categorynav />
         </div>
     )
 }
