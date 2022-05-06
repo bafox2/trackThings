@@ -31,6 +31,9 @@ function Categorynav(props) {
     console.log(entriesToRender) //array of every project entries array with every date and every category
     console.log(entriesToRender[0]) //array of one projects entries array with every date
     console.log(entriesToRender[0][0]) //one item in entries array with date and categories
+    console.log(entriesToRender[0][0].date) //one date from a single entries object array with date 
+    console.log(entriesToRender[0][0].categories) //one date from a single entries object array with date 
+    console.log(entriesToRender[0][0].categories[0].title) //one date from a single entries object array with title 
 
     return (
         <div className="categoryNav" >
