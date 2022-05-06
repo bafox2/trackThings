@@ -24,16 +24,30 @@ function Categorynav(props) {
         // submitToApi(formData)
     }
 
-    const entriesToRender = props.projectData.map(proj => proj.entries)
-    const datesToRender = entriesToRender.map(entries => entries.date)
 
-    console.log(props.projectData) //array of all projects in total
-    console.log(entriesToRender) //array of every project entries array with every date and every category
-    console.log(entriesToRender[0]) //array of one projects entries array with every date
-    console.log(entriesToRender[0][0]) //one item in entries array with date and categories
-    console.log(entriesToRender[0][0].date) //one date from a single entries object array with date 
-    console.log(entriesToRender[0][0].categories) //one date from a single entries object array with date 
-    console.log(entriesToRender[0][0].categories[0].title) //one date from a single entries object array with title 
+    // console.log(props.projectData) //array of all projects in total
+    // console.log(entriesToRender) //array of every project entries array with every date and every category
+    // console.log(entriesToRender[0]) //array of one projects entries array with every date
+    // console.log(entriesToRender[0][0]) //one item in entries array with date and categories
+    // console.log(entriesToRender[0][0].date) //one date from a single entries object array with date 
+    // console.log(entriesToRender[0][0].categories) //array of categories for a specific date, has title, description, and type
+    // console.log(entriesToRender[0][0].categories[0].title) //one date from a single entries object array with title 
+
+    // function findProject(projname) {
+    //     return projname.find(a => a.project === projname)
+    //     // return the object with the project with the same name?
+    // }
+
+    // function findDateEntryInProject(proj, date) {
+    //     return proj.entries.find(entry => entry.date === date)
+    // }
+
+    // function findCategoryInDateInProject(date, category) {
+    //     return date.categories.find(a => a.title === category)
+    // }
+    // const foundProject = findProject('basketball')
+    // const foundDate = findDateEntryInProject(foundProject, '5/1/2022')
+    // const foundCategory = findCategoryInDateInProject(foundDate, 'warmup game')
 
     return (
         <div className="categoryNav" >

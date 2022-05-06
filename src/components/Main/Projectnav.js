@@ -5,23 +5,8 @@ import Button from '../Utils/Button'
 //might need to make a loop that does a project card for each project, 
 
 function Projectnav(props) {
-    const [newProject, setNewProject] = React.useState({
-        project: "",
-        purpose: ""
-    })
-
-    const handleChange = (event) => {
-        const { name, value, type, checked } = event.target
-        setNewProject(prevNewCategory => {
-            return {
-                ...prevNewCategory,
-                [name]: type === "checkbox" ? checked : value
-            }
-        })
-    }
-
     // console.log(props)
-    // console.log(props.projectData)
+    console.log(props.handleClick)
 
     const projectsToRender = props.projectData.map(proj => <Projectcard handleClick={props.handleProjectClick} project={proj.project} />)
 
@@ -38,16 +23,16 @@ function Projectnav(props) {
                 <input
                     type='input'
                     placeholder='new project title'
-                    onChange={handleChange}
+                    onChange={props.handleChange}
                     name='project'
-                    value={newProject.project}
+                    value={props.state.project}
                 />
                 <input
                     type='input'
                     placeholder='new project purpose'
-                    onChange={handleChange}
+                    onChange={props.handleChange}
                     name='purpose'
-                    value={newProject.purpose}
+                    value={props.state.purpose}
                 />
                 <Button text="add project" buttonFunction={props.onSubmit()} />
             </form>

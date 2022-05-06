@@ -23,29 +23,19 @@ function Datenav(props) {
         }
         return day
     };
-    const [newDate, setNewDate] = React.useState({
-        date: `${getCurrentYear()}-${getCurrentMonth()}-${getCurrentDay()}`
-    })
 
 
-    const handleChange = (event) => {
-        const { name, value, type, checked } = event.target
-        setNewDate((prevDate) => {
-            return {
-                ...prevDate,
-                [name]: type === "checkbox" ? checked : value
-            }
-        })
-    }
+
+
 
     const entriesToRender = props.projectData.map(proj => proj.entries)
-    const datesToRender = entriesToRender.map(entries => entries.date)
-
-    console.log(props.projectData) //array of all projects in total
-    console.log(entriesToRender) //array of every project entries array with every date and every category
-    console.log(entriesToRender[0]) //array of one projects entries array with every date
-    console.log(entriesToRender[0][0]) //one date in a projects entries array
-
+    // const datesToRender = entriesToRender.map(entries => entries.date)
+    console.log(props.project)
+    const datesToRender = (props.projectData.find(a => a.project === props.project).entries.map(a => <Datea day={a.date} />))
+    // console.log(props.projectData) //array of all projects in total
+    // console.log(entriesToRender) //array of every project entries array with every date and every category
+    // console.log(entriesToRender[0]) //array of one projects entries array with every date
+    // console.log(entriesToRender[0][0]) //one item in entries array with date and categories
 
 
     return (
@@ -53,9 +43,9 @@ function Datenav(props) {
             <h2>Date List</h2>
             <input
                 type='date'
-                value={newDate.date}
+                value={props.state.date}
                 placeholder=''
-                onChange={handleChange}
+                onChange={props.handleChange}
                 name='date'
             />
             <Button text="add project" buttonFunction={props.onSubmit()} />
