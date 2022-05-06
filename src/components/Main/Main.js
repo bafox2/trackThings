@@ -40,8 +40,8 @@ function Main(props) {
             [
                 {
                     // HEEEEEEEEEELP HERE 5/5 6:42
-                    title: newProject.value,
-                    purpose: newProject.value,
+                    project: 'newProject.value',
+                    purpose: 'newProject.value',
                     picture: '',
                     defaults: [
                         {
@@ -68,11 +68,17 @@ function Main(props) {
             ]);
         //clear the inputs themselves
         //HEEEEEEEEEEEEEEEELP how would i clear the inputs of the cild after i update the projects list
-        setNewProject({
-            newProject.project = ''
-            newProject.purpose = ''
-        })
-        console.log(projects)
+        // setNewProject({
+        //     newProject.project = ''
+        //     newProject.purpose = ''
+        // })
+    }
+
+    function handleProjectClick(project) {
+        const specificProject = projects.find(proj => (proj.project === project));
+        console.log(specificProject)
+
+        return specificProject || console.log('did not find project whoopps')
     }
 
     function onDateAdd(e) {
@@ -85,21 +91,12 @@ function Main(props) {
         console.log('working:)')
     }
 
-    // const handleChange = (event) => {
-    //     const { name, value, type, checked } = event.target
-    //     setCategoryEntryData(prevCatData => {
-    //         return {
-    //             ...prevCatData,
-    //             [name]: type === "checkbox" ? checked : value
-    //         }
-    //     })
-    // }
 
     return (
         <main className="content" >
-            <Projectnav onSubmit={() => onProjectAdd} />
-            <Datenav onSubmit={() => onDateAdd} dates={projects.entries} />
-            <Categorynav onSubmit={() => onCategoryAdd} />
+            <Projectnav projectData={projects} onSubmit={() => onProjectAdd} handleProjectClick={handleProjectClick} />
+            <Datenav onSubmit={() => onDateAdd} projectData={projects} />
+            <Categorynav onSubmit={() => onCategoryAdd} projectData={projects} />
         </main>
     )
 

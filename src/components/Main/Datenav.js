@@ -38,9 +38,16 @@ function Datenav(props) {
         })
     }
 
-    const handleSubmit = (event) => {
-        event.preventDefault()
-    }
+    const entriesToRender = props.projectData.map(proj => proj.entries)
+    const datesToRender = entriesToRender.map(entries => entries.date)
+
+    console.log(props.projectData) //array of all projects in total
+    console.log(entriesToRender) //array of every project entries array with every date and every category
+    console.log(entriesToRender[0]) //array of one projects entries array with every date
+    console.log(entriesToRender[0][0]) //one date in a projects entries array
+
+
+
     return (
         <div className="dateNav" >
             <h2>Date List</h2>
@@ -52,9 +59,7 @@ function Datenav(props) {
                 name='date'
             />
             <Button text="add project" buttonFunction={props.onSubmit()} />
-            <Datea />
-            <Datea />
-            <Datea />
+            {datesToRender}
         </div>
     )
 }
