@@ -220,3 +220,62 @@ export const defaultProjects = [
         ]
     }
 ]
+
+// // this is the old set projects
+// setProjects(
+//     [
+//         {
+        //     project: newProject.project,
+        //     purpose: newProject.purpose,
+        //     picture: '',
+        //     defaults: [
+        //         {
+        //             title: "",
+        //             description: "",
+        //             type: '',
+        //             entry: ''
+        //         }
+        //     ],
+        //     entries: [
+        //         {
+        //             date: '',
+        //             categories: [
+        //                 {
+        //                     title: "",
+        //                     description: "",
+        //                     type: '',
+        //                     entry: ''
+        //                 }]
+        //         },
+        //     ]
+        // },
+        // ...projects
+//     ]);
+
+//finding functions
+// function findProject(projname) {
+//     return defaultProjects.find(a => a.project === projname)
+//     //return the object with the project with the same name?
+// }
+
+// function findDateEntryInProject(proj, date) {
+//     return proj.entries.find(entry => entry.date === date)
+// }
+
+// function findCategoryInDateInProject(date, category) {
+//     return date.categories.find(a => a.title === category)
+// }
+//examples
+// const foundProject = findProject('basketball')
+// const foundDate = findDateEntryInProject(foundProject, '5/1/2022')
+// const foundCategory = findCategoryInDateInProject(foundDate, 'warmup game')
+
+//date old thing
+// const entriesToRender = props.projectData.map(proj => proj.entries)
+// // const datesToRender = entriesToRender.map(entries => entries.date)
+// console.log(props.project)
+// const datesToRender = (props.projectData.find(a => a.project === props.project).entries.map(a => <Datea day={a.date} />))
+// // console.log(props.projectData) //array of all projects in total
+// // console.log(entriesToRender) //array of every project entries array with every date and every category
+// // console.log(entriesToRender[0]) //array of one projects entries array with every date
+// // console.log(entriesToRender[0][0]) //one item in entries array with date and categories

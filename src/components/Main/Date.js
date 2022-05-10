@@ -2,12 +2,10 @@ import React from "react";
 import Button from "../Utils/Button";
 
 function Date(props) {
-    console.log(props)
-
     return (
-        <div className="date" >
+        <div className="date" onClick={() => props.handleClick(props.day)}>
             <span>
-                <h2>{props.day || '02/02/2000'}</h2>
+                <h2>{props.day || 'No entries yet!'}</h2>
                 <Button text='x' />
             </span>
         </div>

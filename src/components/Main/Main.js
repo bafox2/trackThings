@@ -5,17 +5,17 @@ import Categorynav from "./Categorynav";
 import { defaultProjects } from "./defaultprojects";
 
 function Main(props) {
-    //maybe I should merge all the different states into one global type state?
-    //need to set a variable that will calculate what project was clicked on and then pass that information to the Datenav and 
-    let currentProject = 'thing clicked on'
-    const [projects, setProjects] = React.useState(defaultProjects)
+    const [projectList, setProjectList] = React.useState(defaultProjects)
+    const [currentProject, setCurrentProject] = React.useState()
+    const [currentDate, setCurrentDate] = React.useState()
 
     const [newProject, setNewProject] = React.useState({
         project: "",
         purpose: ""
     })
     const [newDate, setNewDate] = React.useState({
-        // date: `${getCurrentYear()}-${getCurrentMonth()}-${getCurrentDay()}`
+        date: '',
+        categories: ''
     })
 
     //can merge these with sometype of if?
@@ -38,11 +38,32 @@ function Main(props) {
         })
     }
 
-    function onProjectAdd(e) {
+    function onDateAdd(e) {
         e.preventDefault()
 
         //add a project to state, based off the inputs
-        setProjects(
+        setCurrentProject(
+            [
+                {
+                    ...currentProject,
+                    entries: {
+                        ...currentProject.entries,
+
+                    }
+                },
+                ...projectList
+            ]);
+
+        //clear the inputs themselves
+        setNewDate({
+            date: ""
+        })
+    }
+
+    function onProjectAdd(e) {
+        e.preventDefault()
+        //add a project to state, based off the inputs
+        setProjectList(
             [
                 {
                     project: newProject.project,
@@ -69,7 +90,7 @@ function Main(props) {
                         },
                     ]
                 },
-                ...projects
+                ...projectList
             ]);
 
         //clear the inputs themselves
@@ -78,46 +99,30 @@ function Main(props) {
             purpose: ""
         })
     }
-    //finding functions
-    // function findProject(projname) {
-    //     return defaultProjects.find(a => a.project === projname)
-    //     //return the object with the project with the same name?
-    // }
-
-    // function findDateEntryInProject(proj, date) {
-    //     return proj.entries.find(entry => entry.date === date)
-    // }
-
-    // function findCategoryInDateInProject(date, category) {
-    //     return date.categories.find(a => a.title === category)
-    // }
-    //examples
-    // const foundProject = findProject('basketball')
-    // const foundDate = findDateEntryInProject(foundProject, '5/1/2022')
-    // const foundCategory = findCategoryInDateInProject(foundDate, 'warmup game')
 
     function handleProjectClick(project) {
-        const specificProject = projects.find(proj => (proj.project === project));
-        console.log(specificProject)
-        return <Datenav onSubmit={() => onDateAdd} projectData={specificProject || projects} /> || console.log('did not find project whoopps')
+        const foundProject = projectList.find(proj => (proj.project === project));
+        setCurrentProject(foundProject)
+        setCurrentDate()
+    }
+    function handleDateClick(date) {
+
+        const foundEntry = currentProject.entries.find(a => a.date === date)
+        console.log(foundEntry)
+        setCurrentDate(foundEntry)
     }
 
-    function onDateAdd(e) {
-        e.preventDefault()
-        console.log('working:)')
-    }
 
     function onCategoryAdd(e) {
         e.preventDefault()
         console.log('working:)')
     }
 
-
     return (
         <main className="content" >
-            <Projectnav projectData={projects} onSubmit={() => onProjectAdd} handleProjectClick={handleProjectClick} handleChange={handleChangeNewProj} state={newProject} project={'health'} />
-            <Datenav onSubmit={() => onDateAdd} projectData={projects} handleChange={handleChangeNewDate} state={newProject} project={'health'} />
-            <Categorynav onSubmit={() => onCategoryAdd} projectData={projects} />
+            <Projectnav projectData={projectList} onSubmit={() => onProjectAdd} handleClick={handleProjectClick} handleChange={handleChangeNewProj} state={newProject} />
+            <Datenav onSubmit={() => onDateAdd} projectData={currentProject} handleClick={handleDateClick} handleChange={handleChangeNewDate} state={newDate} />
+            <Categorynav onSubmit={() => onCategoryAdd} projectData={currentDate} />
         </main>
     )
 

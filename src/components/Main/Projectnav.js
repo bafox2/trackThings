@@ -2,19 +2,14 @@ import React from "react";
 import Projectcard from "./Projectcard";
 import Button from '../Utils/Button'
 
-//might need to make a loop that does a project card for each project, 
 
 function Projectnav(props) {
-    // console.log(props)
-    console.log(props.handleClick)
 
-    const projectsToRender = props.projectData.map(proj => <Projectcard handleClick={props.handleProjectClick} project={proj.project} />)
+    const projectsToRender = props.projectData.map(proj => <Projectcard handleClick={props.handleClick} project={proj.project} />)
 
     return (
         <div className="projectNav">
             <h2>Projects</h2>
-            {/* <Button text='+' buttonFunction='' /> */}
-            {/* need this to do the animations for the add project UI peice at some point */}
             <div className="projectScroller" >
                 {projectsToRender}
 
