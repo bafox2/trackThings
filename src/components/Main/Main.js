@@ -43,16 +43,18 @@ function Main(props) {
 
         //add a project to state, based off the inputs
         setCurrentProject(
-            [
-                {
-                    ...currentProject,
-                    entries: {
-                        ...currentProject.entries,
+            {
+                ...currentProject,
+                entries: [
+                    ...currentProject.entries,
 
-                    }
-                },
-                ...projectList
-            ]);
+                    {
+                        date: currentDate,
+                        categories: ['categories will be added', 'i promise']
+
+                    }]
+            }
+        );
 
         //clear the inputs themselves
         setNewDate({
