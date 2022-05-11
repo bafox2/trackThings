@@ -4,7 +4,6 @@ import Button from '../Utils/Button'
 
 
 function Projectnav(props) {
-
     const projectsToRender = props.projectData.map(proj => <Projectcard handleClick={props.handleClick} project={proj.project} />)
 
     return (

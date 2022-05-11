@@ -1,7 +1,7 @@
 
 export const defaultProjects = [
     {
-        project: 'health',
+        project: '?????????????',
         purpose: 'to not weigh 200 lbs',
         picture: 'google.com/imgages/bigboi',
         defaults: [
@@ -26,7 +26,7 @@ export const defaultProjects = [
         ],
         entries: [
             {
-                date: '5/4/2022',
+                day: '5/4/2022',
                 categories: [
                     {
                         title: "sleep time",
@@ -54,7 +54,7 @@ export const defaultProjects = [
                     }]
             },
             {
-                date: '5/3/2022',
+                day: '5/3/2022',
                 categories: [
                     {
                         title: "sleep time",
@@ -103,7 +103,7 @@ export const defaultProjects = [
         ],
         entries: [
             {
-                date: '5/1/2022',
+                day: '5/1/2022',
                 categories: [
                     {
                         title: "warmup game",
@@ -125,7 +125,7 @@ export const defaultProjects = [
                     }]
             },
             {
-                date: '4/28/2022',
+                day: '4/28/2022',
                 categories: [
                     {
                         title: "warmup game",
@@ -174,7 +174,7 @@ export const defaultProjects = [
         ],
         entries: [
             {
-                date: '3/21/2022',
+                day: '3/21/2022',
                 categories: [
                     {
                         title: "aim practice",
@@ -196,7 +196,7 @@ export const defaultProjects = [
                     }]
             },
             {
-                date: '7/22/2022',
+                day: '7/22/2022',
                 categories: [
                     {
                         title: "warmup game",
@@ -279,3 +279,9 @@ export const defaultProjects = [
 // // console.log(entriesToRender) //array of every project entries array with every date and every category
 // // console.log(entriesToRender[0]) //array of one projects entries array with every date
 // // console.log(entriesToRender[0][0]) //one item in entries array with date and categories
+
+// handling dates
+// const projectEntryCategories = currentProject.entries.map(entry => entry.categories)
+// const projectEntryDates = currentProject.entries.map(entry => entry.date)
+// console.log(projectEntryCategories)
+// console.log(projectEntryDates)

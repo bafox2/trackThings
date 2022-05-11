@@ -7,7 +7,7 @@ function Projectcard(props) {
     // console.log(props.project)
     return (
         <div className="project" onClick={() => props.handleClick(props.project)} >
-            <h2>{props.project || 'health'}</h2>
+            <h2>{props.project || 'no props.project'}</h2>
             <h3>times updated: {props.timesUpdated || 0}</h3>
             <h3>last updated: {props.streak || 0}</h3>
             <Button text='x' />

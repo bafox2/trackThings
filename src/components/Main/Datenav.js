@@ -4,7 +4,6 @@ import Button from "../Utils/Button";
 import Categorynav from './Categorynav'
 
 function Datenav(props) {
-    console.log(props.projectData)
     const getCurrentYear = () => {
         return new Date().getFullYear();
     };
@@ -24,10 +23,10 @@ function Datenav(props) {
         }
         return day
     };
-    // console.log(props.projectData.entries)
-    const datesToRender = (props.projectData === undefined) ? 'no project selected' : props.projectData.entries.map(entry => <Datea day={entry.date} categoryEntries={entry.categories} handleClick={props.handleClick} />)
-
-
+    const datesToRender = (props.projectData === undefined) ? 'no project selected' : props.projectData.entries.map(entry => <Datea day={entry.day}
+        categoryEntries={entry.categoryEntries} handleClick={props.handleClick} />)
+    const logit = (props.projectData === undefined) ? 'test' : props.projectData
+    console.log(logit)
 
 
 
@@ -37,13 +36,13 @@ function Datenav(props) {
             <input
                 type='date'
                 onChange={props.handleChange}
-                value={props.state.date}
+                value={props.state.day}
                 placeholder=''
-                name='date'
+                name='day'
             />
-            <Button text="add date" buttonFunction={props.onSubmit()} />
+            <Button text="add date" buttonFunction={() => props.onSubmit(props.projectData)} />
             <br />
-            {datesToRender}
+            {datesToRender.length === 0 ? `no dates in ${props.projectData.project} yet` : datesToRender}
         </div>
     )
 }
