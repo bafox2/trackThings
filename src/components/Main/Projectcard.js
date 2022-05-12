@@ -1,24 +1,18 @@
-import React from "react";
+import React from 'react'
 import Button from '../Utils/Button'
 
 function Projectcard(props) {
-    // Project name, times updated, last updated, image(?)
-    // console.log(props.handleClick('health'))
-    // console.log(props.project)
-    return (
-        <div className="project" onClick={() => props.handleClick(props.project)} >
-            <h2>{props.project || 'no props.project'}</h2>
-            <h3>times updated: {props.timesUpdated || 0}</h3>
-            <h3>last updated: {props.streak || 0}</h3>
-            <Button text='x' />
-        </div>
-    )
-
+  return (
+    <div className='project' onClick={() => props.handleClick(props.project)}>
+      <h2>{props.project || 'no props.project'}</h2>
+      <h3>times updated: {props.timesUpdated || 0}</h3>
+      <h3>last updated: {props.streak || 0}</h3>
+      <Button text='x' buttonFunction={() => props.onRemove(props.project)} />
+    </div>
+  )
 }
 
 export default Projectcard
-
-
 
 //not needed (i think)
 // const [project, setproject] = React.useState({
