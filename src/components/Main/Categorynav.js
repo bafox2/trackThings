@@ -18,15 +18,15 @@ function Categorynav(props) {
   //here was old render
   const categoriesToRender = selectedDate
     ? selectedDate.categoryEntries.map((entry) => (
-        <Category
-          title={entry.title}
-          description={entry.description}
-          handleChange={props.handleChange}
-          entry={entry.entry}
-          type={entry.type}
-          handleClick={props.handleClick}
-        />
-      ))
+      <Category
+        title={entry.title}
+        description={entry.description}
+        handleChange={props.handleChange}
+        entry={entry.entry}
+        type={entry.type}
+        handleClick={props.handleClick}
+      />
+    ))
     : 'no date selected'
 
   return (

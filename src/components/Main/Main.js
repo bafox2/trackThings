@@ -142,6 +142,38 @@ function Main(props) {
       })
     )
   }
+
+  function onRemoveDate(dateID) {
+    setProjectList(
+      projectList.map((proj) => {
+        if (proj.project === selectedProjectID) {
+          console.log('changing this project')
+          return {
+            ...proj,
+            entries: proj.entries.filter((entry) => entry.day !== dateID),
+          }
+        } else {
+          return proj
+        }
+      })
+    )
+  }
+
+  function onRemoveCategory(dateID) {
+    setProjectList(
+      projectList.map((proj) => {
+        if (proj.project === selectedProjectID) {
+          console.log('changing this project')
+          return {
+            ...proj,
+            entries: proj.entries.filter((entry) => entry.day !== dateID),
+          }
+        } else {
+          return proj
+        }
+      })
+    )
+  }
   // const newArr = currentProject.entries.filter(
   //   (entry) => entry.day !== dateID
   // )

@@ -11,13 +11,13 @@ function Datenav(props) {
 
   const datesToRender = selectedProject
     ? selectedProject.entries.map((entry) => (
-        <Datea
-          day={entry.day}
-          categoryEntries={entry.categoryEntries}
-          handleClick={props.handleClick}
-          onRemove={props.onRemove}
-        />
-      ))
+      <Datea
+        day={entry.day}
+        categoryEntries={entry.categoryEntries}
+        handleClick={props.handleClick}
+        onRemove={props.onRemove}
+      />
+    ))
     : ''
   return (
     <div className='dateNav'>
