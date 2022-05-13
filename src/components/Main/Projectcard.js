@@ -7,17 +7,9 @@ function Projectcard(props) {
       <h2>{props.project || 'no props.project'}</h2>
       <h3>times updated: {props.timesUpdated || 0}</h3>
       <h3>last updated: {props.streak || 0}</h3>
-      <Button text='x' buttonFunction={() => props.onRemove(props.project)} />
+      <Button text='x' buttonFunction={(e) => { e.stopPropagation(); props.onRemove(props.project) }} />
     </div>
   )
 }
 
 export default Projectcard
-
-//not needed (i think)
-// const [project, setproject] = React.useState({
-//     title: "default proj",
-//     timesUpdated: 0,
-//     streak: 0,
-//     isFavorite: false
-// })

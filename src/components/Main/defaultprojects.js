@@ -27,7 +27,7 @@ export const defaultProjects = [
         entries: [
             {
                 day: '5/4/2022',
-                categories: [
+                categoryEntries: [
                     {
                         title: "sleep time",
                         description: "when did you lay in bed",
@@ -55,7 +55,7 @@ export const defaultProjects = [
             },
             {
                 day: '5/3/2022',
-                categories: [
+                categoryEntries: [
                     {
                         title: "sleep time",
                         description: "when did you lay in bed",
@@ -104,7 +104,7 @@ export const defaultProjects = [
         entries: [
             {
                 day: '5/1/2022',
-                categories: [
+                categoryEntries: [
                     {
                         title: "warmup game",
                         description: "how many buckets",
@@ -126,7 +126,7 @@ export const defaultProjects = [
             },
             {
                 day: '4/28/2022',
-                categories: [
+                categoryEntries: [
                     {
                         title: "warmup game",
                         description: "how many buckets",
@@ -175,7 +175,7 @@ export const defaultProjects = [
         entries: [
             {
                 day: '3/21/2022',
-                categories: [
+                categoryEntries: [
                     {
                         title: "aim practice",
                         description: "how many rounds",
@@ -197,7 +197,7 @@ export const defaultProjects = [
             },
             {
                 day: '7/22/2022',
-                categories: [
+                categoryEntries: [
                     {
                         title: "warmup game",
                         description: "how many buckets",
@@ -239,7 +239,7 @@ export const defaultProjects = [
         //     entries: [
         //         {
         //             date: '',
-        //             categories: [
+        //             categoryEntries: [
         //                 {
         //                     title: "",
         //                     description: "",
@@ -263,7 +263,7 @@ export const defaultProjects = [
 // }
 
 // function findCategoryInDateInProject(date, category) {
-//     return date.categories.find(a => a.title === category)
+//     return date.categoryEntries.find(a => a.title === category)
 // }
 //examples
 // const foundProject = findProject('basketball')
@@ -278,10 +278,31 @@ export const defaultProjects = [
 // // console.log(props.projectData) //array of all projects in total
 // // console.log(entriesToRender) //array of every project entries array with every date and every category
 // // console.log(entriesToRender[0]) //array of one projects entries array with every date
-// // console.log(entriesToRender[0][0]) //one item in entries array with date and categories
+// // console.log(entriesToRender[0][0]) //one item in entries array with date and categoryEntries
 
 // handling dates
-// const projectEntryCategories = currentProject.entries.map(entry => entry.categories)
+// const projectEntrycategoryEntries = currentProject.entries.map(entry => entry.categoryEntries)
 // const projectEntryDates = currentProject.entries.map(entry => entry.date)
-// console.log(projectEntryCategories)
+// console.log(projectEntrycategoryEntries)
 // console.log(projectEntryDates)
+
+// //the time thing
+// const getCurrentYear = () => {
+//     return new Date().getFullYear()
+//   }
+//   const getCurrentMonth = () => {
+//     let month = new Date().getMonth()
+//     month++
+//     if (month <= 9) {
+//       month = '0' + month
+//     }
+//     return month
+//   }
+//   const getCurrentDay = () => {
+//     let day = new Date().getDay()
+//     day++
+//     if (day <= 9) {
+//       day = '0' + day
+//     }
+//     return day
+//   }
