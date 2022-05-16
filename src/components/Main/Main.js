@@ -8,7 +8,6 @@ import { defaultProjects } from './defaultprojects'
 //when you clear a project, it still shows up as the current project in the Date List
 
 //to do
-//remove date
 //start looking into exporting
 //write the help blurb
 //start error handling or validationg data
@@ -128,6 +127,38 @@ function Main(props) {
   // it's moving date
   //it's also removing everything else about the object
   function onRemoveDate(dateID) {
+    setProjectList(
+      projectList.map((proj) => {
+        if (proj.project === selectedProjectID) {
+          console.log('changing this project')
+          return {
+            ...proj,
+            entries: proj.entries.filter((entry) => entry.day !== dateID),
+          }
+        } else {
+          return proj
+        }
+      })
+    )
+  }
+
+  function onRemoveDate(dateID) {
+    setProjectList(
+      projectList.map((proj) => {
+        if (proj.project === selectedProjectID) {
+          console.log('changing this project')
+          return {
+            ...proj,
+            entries: proj.entries.filter((entry) => entry.day !== dateID),
+          }
+        } else {
+          return proj
+        }
+      })
+    )
+  }
+
+  function onRemoveCategory(dateID) {
     setProjectList(
       projectList.map((proj) => {
         if (proj.project === selectedProjectID) {
