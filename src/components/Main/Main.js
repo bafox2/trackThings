@@ -9,8 +9,11 @@ import { defaultProjects } from './defaultprojects'
 
 //to do
 //start looking into exporting
+//add defaults on projectclick, posibly a button that brings up defaults in the ui
 //write the help blurb
+//    add a popup component
 //start error handling or validationg data
+//integrate selected project category
 
 //try figuring out the entry onchanges
 //mioght need to make the categories the id?
@@ -21,6 +24,9 @@ function Main(props) {
     'this because there are no projects'
   )
   const [selectedProjectDate, setSelectedProjectDate] = React.useState('')
+
+  const [selectedProjectCategory, setSelectedProjectCategory] =
+    React.useState('')
 
   const [newProject, setNewProject] = React.useState({
     project: '',
@@ -141,31 +147,23 @@ function Main(props) {
       })
     )
   }
-
-  function onRemoveDate(dateID) {
+  //might need to set new thing after removing a thing
+  function onRemoveCategory() {
     setProjectList(
       projectList.map((proj) => {
         if (proj.project === selectedProjectID) {
-          console.log('changing this project')
+          console.log('we have the project')
+          proj.project.entries.find(
+            (entry) => entry.day === selectedProjectDate
+          )
+          // no we need the selected date to be
+          // selectedProjectDate
           return {
             ...proj,
-            entries: proj.entries.filter((entry) => entry.day !== dateID),
-          }
-        } else {
-          return proj
-        }
-      })
-    )
-  }
-
-  function onRemoveCategory(dateID) {
-    setProjectList(
-      projectList.map((proj) => {
-        if (proj.project === selectedProjectID) {
-          console.log('changing this project')
-          return {
-            ...proj,
-            entries: proj.entries.filter((entry) => entry.day !== dateID),
+            //this, but for the entry
+            entries: proj.entries.filter(
+              (entry) => entry.categoryEntries !== selectedProjectCategory
+            ),
           }
         } else {
           return proj
@@ -263,7 +261,20 @@ function Main(props) {
     const foundEntry = foundProject.entries.find((a) => a.day === date)
     setSelectedProjectDate(foundEntry)
   }
-  console.log(projectList)
+  //use the currentProjectID to find the entry in project List
+  function handleCategoryClick(entry) {
+    const foundProject = projectList.find(
+      (proj) => proj.project === selectedProjectID
+    )
+    const foundEntry = foundProject.entries.find(
+      (a) => a.day === selectedProjectDate
+    )
+    const foundCategory = foundEntry.categoryEntries.find(
+      (a) => a.title === entry
+    )
+    setSelectedProjectCategory(foundCategory)
+  }
+
   return (
     <main className='content'>
       <Projectnav
@@ -287,6 +298,8 @@ function Main(props) {
         projectData={projectList}
         selectedProject={selectedProjectID}
         selectedDate={selectedProjectDate}
+        selectedCategory={selectedProjectCategory}
+        onRemove={onRemoveCategory}
         onSubmit={onCategoryAdd}
         handleChange={handleChangeNewCategory}
         state={newCategory}
